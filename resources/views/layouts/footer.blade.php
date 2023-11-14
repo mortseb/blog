@@ -10,15 +10,15 @@
 
             <!-- Footer Links -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-footer-link :href="route('home')">
+                <a href="route('home')">
                     {{ __('Home') }}
-                </x-footer-link>
-                <x-footer-link :href="route('about')">
+                </a>
+                <a href="route('about')">
                     {{ __('About') }}
-                </x-footer-link>
-                <x-footer-link :href="route('contact')">
+                </a>
+                <a href="route('contact')">
                     {{ __('Contact') }}
-                </x-footer-link>
+                </a>
             </div>
         </div>
     </div>
