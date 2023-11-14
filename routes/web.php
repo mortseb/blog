@@ -15,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [HomepageController ::class, 'index']);
 
-Route::get('/', [HomepageController::class, 'index']);
-Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
-Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,5 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__ . '/auth.php';
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+require __DIR__.'/auth.php';
